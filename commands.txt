@@ -1,0 +1,21 @@
+npx playwright test
+
+npx playwright show-report
+##Runing the Example Test in the UI mode
+npx playwright test --ui
+
+Updating Playwright
+npm install -D @playwright/test@latest
+npx playwright install --with-deps
+
+Check version
+npx playwright --version
+
+
+##Using the Variables in Playwright (Install it via your terminal)
+
+npm install -D dotenv
+
+in the top of the playwright.configs.ts
+import dotenv from 'dotenv';
+dotenv.config();
