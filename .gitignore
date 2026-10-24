@@ -9,6 +9,6 @@ node_modules/
 
 ##Files from Webstorm
 .idea
-
+temporaryNotes.txt
 ##Environment variables
 .env

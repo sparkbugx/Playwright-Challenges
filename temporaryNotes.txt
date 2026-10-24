@@ -1,0 +1,8 @@
+Playwright
+
+https://playwright.dev/docs/input#text-input
+
+
+Playwright Challenges
+
+https://targetqa.com/challenges/playwright-shopzone-location-popup?lang=typescript
