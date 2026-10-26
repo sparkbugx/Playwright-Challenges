@@ -1,21 +1,45 @@
-npx playwright test
+Playwright + TypeScript — command cheat sheet
+=============================================
 
-npx playwright show-report
-##Runing the Example Test in the UI mode
-npx playwright test --ui
-
-Updating Playwright
-npm install -D @playwright/test@latest
+Setup (first run)
+-----------------
+npm ci
 npx playwright install --with-deps
 
-Check version
+
+Run
+---
+npx playwright test                                  # all challenges, all 3 browsers
+npx playwright test tests/<name>.spec.ts             # one challenge
+npx playwright test tests/<name>.spec.ts --project=chromium
+npx playwright test -g "<test title>"                # one test by title
+npx playwright test --ui                             # interactive UI mode
+npx playwright test --headed                         # watch the browser
+npx playwright test --debug                          # Playwright Inspector
+
+
+Reports
+-------
+npx playwright show-report
+
+
+Maintenance
+-----------
 npx playwright --version
+npm install -D @playwright/test@latest
+npx playwright install --with-deps                   # after updating Playwright
 
 
-##Using the Variables in Playwright (Install it via your terminal)
+Environment (optional)
+----------------------
+# playwright.config.ts already calls dotenv.config()
+# .env is gitignored and currently empty — the labs need no secrets
 
-npm install -D dotenv
 
-in the top of the playwright.configs.ts
-import dotenv from 'dotenv';
-dotenv.config();
+Docs
+----
+Playwright:            https://playwright.dev/docs/intro
+Locators:              https://playwright.dev/docs/locators
+Web-first assertions:  https://playwright.dev/docs/test-assertions
+Challenge docs:        challenges-descriptions/
+Specs:                 tests/

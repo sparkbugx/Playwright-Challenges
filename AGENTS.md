@@ -50,6 +50,125 @@ Sections appear in this order, separated by `---`:
 
 Keep selectors, URLs, and expected strings identical to the spec. Use tables over long lists, one blank line after headings, and concise scannable prose.
 
+Level badge colours: `easy-green`, `beginner-green`, `beginner--intermediate-blue`, `medium-orange`, `hard-red`.
+
+### Doc template
+
+```markdown
+# <Title In Title Case>
+
+> **<Tagline — what this challenge proves.>**
+> <One supporting line of context.>
+
+[![Playwright Tests](https://github.com/sparkbugx/Playwright-Challenges/actions/workflows/playwright.yml/badge.svg)](https://github.com/sparkbugx/Playwright-Challenges/actions/workflows/playwright.yml)
+[![Playwright](https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+![Level](https://img.shields.io/badge/level-medium-orange)
+
+---
+
+## 📌 Overview
+
+<Two short paragraphs: the scenario, then what makes it interesting. Key values in **bold**.>
+
+| Detail | Value |
+| :--- | :--- |
+| **Challenge type** | <e.g. Authentication · OTP flow> |
+| **Focus** | <tags from the challenge page, e.g. forms, overlays> |
+| **App** | <practice app name> |
+| **Test file** | [`tests/<name>.spec.ts`](../tests/<name>.spec.ts) |
+| **Live lab** | [Open the lab](<lab URL>) |
+| **Challenge page** | [View challenge](<challenge URL>) |
+| **Browsers** | Chromium · Firefox · WebKit |
+
+---
+
+## 🎯 Objective
+
+> <The challenge objective, quoted or lightly tightened.>
+
+<One sentence on why this challenge matters.>
+
+---
+
+## ✅ Your task
+
+1. **<Step name>** — <action with `selectors` in backticks>.
+2. ...
+
+### Selector reference
+
+| Element | Selector | Expected value / state |
+| :--- | :--- | :--- |
+| <Name> | `#id` | <value or state> |
+
+---
+
+## 🏁 Acceptance criteria
+
+| Status | Requirement |
+| :---: | :--- |
+| ✅ | <Requirement from the challenge page.> |
+
+---
+
+## 🧠 Skills demonstrated
+
+| Skill | What it proves |
+| :--- | :--- |
+| **<Skill>** | <Sentence.> |
+
+---
+
+<details>
+<summary><strong>💻 Reference implementation</strong> (click to expand)</summary>
+
+```ts
+// Verified on all three browsers before publishing.
+```
+
+</details>
+
+---
+
+## 🚀 Run it locally
+
+```bash
+# Install dependencies and browsers (first run only)
+npm ci
+npx playwright install --with-deps
+
+# Run this challenge
+npx playwright test tests/<name>.spec.ts
+
+# Explore interactively
+npx playwright test tests/<name>.spec.ts --ui
+```
+
+---
+
+## 📚 Resources
+
+- [Playwright locators](https://playwright.dev/docs/locators)
+- <Topic-specific docs>
+- [Test configuration](../playwright.config.ts)
+
+---
+
+<p align="center">
+  <sub>Part of the <a href="https://github.com/sparkbugx/Playwright-Challenges"><strong>Playwright Challenges</strong></a> collection · built with Playwright + TypeScript</sub>
+</p>
+```
+
+## In-progress challenges
+
+New labs arrive faster than they get solved, so a challenge can be documented before its spec exists.
+
+- Create the doc in the full canonical format, with a **verified** reference implementation in the collapsed section, and leave the spec as the starter skeleton (or empty) for the author to solve.
+- Do **not** run or rewrite that starter spec, and never describe a challenge as solved until its spec passes on all three browsers.
+- In `README.md`, mark the catalog row with 🚧 and keep the counts honest: `<n> documented · <solved> solved · <in progress> in progress`.
+- Run the reference implementation from a temporary spec file (e.g. `tests/_tmp<Name>.spec.ts`), confirm it passes, then delete the temp file so `tests/` only holds real challenges.
+
 ## Environment quirks
 
 - `playwright.config.ts` calls `dotenv.config()`, so a root `.env` is auto-loaded. `.env` is gitignored and currently empty — never commit it.
