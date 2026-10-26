@@ -6,7 +6,7 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-
+temporaryNotes.txt
 ##Files from Webstorm
 .idea
 temporaryNotes.txt
