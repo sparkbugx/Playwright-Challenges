@@ -15,6 +15,8 @@ test('Log in with a mobile number and an SMS OTP', async ({ page }) => {
     await page.locator('#otp-input').fill(otpCode);
     await page.locator('#verify-otp').click();
 
+    await expect(page.locator('#home-welcome')).toBeVisible()
+
 
 });
 
